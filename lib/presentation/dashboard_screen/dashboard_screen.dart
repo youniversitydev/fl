@@ -1,10 +1,10 @@
 import '../dashboard_screen/widgets/dashboard1_item_widget.dart';
 import '../dashboard_screen/widgets/dashboard2_item_widget.dart';
-import '../dashboard_screen/widgets/dashboard3_item_widget.dart';
 import '../dashboard_screen/widgets/dashboard_item_widget.dart';
 import 'controller/dashboard_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:iyouniweb1/core/app_export.dart';
+import 'package:iyouniweb1/data/models/programs/post_programs_req.dart';
 
 class DashboardScreen extends StatelessWidget {
   DashboardController dashboardController = Get.put(DashboardController());
@@ -347,20 +347,241 @@ class DashboardScreen extends StatelessWidget {
                                                                 FontWeight
                                                                     .w700)))
                                           ])),
-                                  Container(
-                                      height: getSize(113),
-                                      width: getSize(480),
-                                      margin: EdgeInsets.only(
+                                  Padding(
+                                      padding: EdgeInsets.only(
                                           left: getSize(16), top: getSize(12)),
-                                      padding:
-                                          EdgeInsets.only(left: getSize(12)),
-                                      child: ListView.builder(
-                                          scrollDirection: Axis.horizontal,
-                                          physics: BouncingScrollPhysics(),
-                                          itemCount: 6,
-                                          itemBuilder: (context, index) {
-                                            return DashboardItemWidget();
-                                          })),
+                                      child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                                padding: EdgeInsets.only(
+                                                    right: getSize(410)),
+                                                child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      GestureDetector(
+                                                          onTap: () {
+                                                            onTapImg2();
+                                                          },
+                                                          child: Image.asset(
+                                                              ImageConstant
+                                                                  .img_product_icon,
+                                                              height:
+                                                                  getSize(70),
+                                                              width:
+                                                                  getSize(70),
+                                                              fit: BoxFit
+                                                                  .cover)),
+                                                      Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  top: getSize(
+                                                                      8)),
+                                                          child: Text(
+                                                              "lbl_man_shirt"
+                                                                  .tr,
+                                                              style: AppStyle
+                                                                  .textStylePoppinsregular10
+                                                                  .copyWith(
+                                                                      fontSize:
+                                                                          getSize(
+                                                                              10.0),
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400)))
+                                                    ])),
+                                            Padding(
+                                                padding: EdgeInsets.only(
+                                                    left: getSize(82),
+                                                    right: getSize(328)),
+                                                child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Image.asset(
+                                                          ImageConstant
+                                                              .img_product_icon_1,
+                                                          height: getSize(70),
+                                                          width: getSize(70),
+                                                          fit: BoxFit.cover),
+                                                      Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  top: getSize(
+                                                                      8)),
+                                                          child: Text(
+                                                              "lbl_dress".tr,
+                                                              style: AppStyle
+                                                                  .textStylePoppinsregular10
+                                                                  .copyWith(
+                                                                      fontSize: getSize(
+                                                                          10.0),
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400)))
+                                                    ])),
+                                            Padding(
+                                                padding: EdgeInsets.only(
+                                                    left: getSize(164),
+                                                    right: getSize(246)),
+                                                child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Image.asset(
+                                                          ImageConstant
+                                                              .img_product_icon_2,
+                                                          height: getSize(70),
+                                                          width: getSize(70),
+                                                          fit: BoxFit.cover),
+                                                      Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  top: getSize(
+                                                                      8)),
+                                                          child: Text(
+                                                              "msg_man_work_equipm"
+                                                                  .tr,
+                                                              style: AppStyle
+                                                                  .textStylePoppinsregular10
+                                                                  .copyWith(
+                                                                      fontSize:
+                                                                          getSize(
+                                                                              10.0),
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400)))
+                                                    ])),
+                                            Padding(
+                                                padding: EdgeInsets.only(
+                                                    left: getSize(246),
+                                                    right: getSize(164)),
+                                                child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Image.asset(
+                                                          ImageConstant
+                                                              .img_product_icon_3,
+                                                          height: getSize(70),
+                                                          width: getSize(70),
+                                                          fit: BoxFit.cover),
+                                                      Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  top: getSize(
+                                                                      8)),
+                                                          child: Text(
+                                                              "lbl_woman_bag"
+                                                                  .tr,
+                                                              style: AppStyle
+                                                                  .textStylePoppinsregular10
+                                                                  .copyWith(
+                                                                      fontSize:
+                                                                          getSize(
+                                                                              10.0),
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400)))
+                                                    ])),
+                                            Padding(
+                                                padding: EdgeInsets.only(
+                                                    left: getSize(328),
+                                                    right: getSize(82)),
+                                                child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Image.asset(
+                                                          ImageConstant
+                                                              .img_product_icon_4,
+                                                          height: getSize(70),
+                                                          width: getSize(70),
+                                                          fit: BoxFit.cover),
+                                                      Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  top: getSize(
+                                                                      8)),
+                                                          child: Text(
+                                                              "lbl_man_shoes"
+                                                                  .tr,
+                                                              style: AppStyle
+                                                                  .textStylePoppinsregular10
+                                                                  .copyWith(
+                                                                      fontSize:
+                                                                          getSize(
+                                                                              10.0),
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400)))
+                                                    ])),
+                                            Padding(
+                                                padding: EdgeInsets.only(
+                                                    left: getSize(410)),
+                                                child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Image.asset(
+                                                          ImageConstant
+                                                              .img_product_icon_5,
+                                                          height: getSize(70),
+                                                          width: getSize(70),
+                                                          fit: BoxFit.cover),
+                                                      Padding(
+                                                          padding:
+                                                              EdgeInsets.only(
+                                                                  top: getSize(
+                                                                      8)),
+                                                          child: Text(
+                                                              "lbl_high_heels"
+                                                                  .tr,
+                                                              style: AppStyle
+                                                                  .textStylePoppinsregular10
+                                                                  .copyWith(
+                                                                      fontSize:
+                                                                          getSize(
+                                                                              10.0),
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w400)))
+                                                    ]))
+                                          ])),
                                   GestureDetector(
                                       onTap: () {
                                         onTapRow();
@@ -411,7 +632,7 @@ class DashboardScreen extends StatelessWidget {
                                           physics: BouncingScrollPhysics(),
                                           itemCount: 3,
                                           itemBuilder: (context, index) {
-                                            return Dashboard1ItemWidget();
+                                            return DashboardItemWidget();
                                           })),
                                   Container(
                                       width: getSize(348),
@@ -452,7 +673,7 @@ class DashboardScreen extends StatelessWidget {
                                           physics: BouncingScrollPhysics(),
                                           itemCount: 3,
                                           itemBuilder: (context, index) {
-                                            return Dashboard2ItemWidget();
+                                            return Dashboard1ItemWidget();
                                           })),
                                   Padding(
                                       padding: EdgeInsets.only(
@@ -478,7 +699,7 @@ class DashboardScreen extends StatelessWidget {
                                       physics: NeverScrollableScrollPhysics(),
                                       itemCount: 4,
                                       itemBuilder: (context, index) {
-                                        return Dashboard3ItemWidget();
+                                        return Dashboard2ItemWidget();
                                       })
                                 ])))
                   ])),
@@ -639,6 +860,24 @@ class DashboardScreen extends StatelessWidget {
 
   onTapTxtMoreCategory() {
     Get.toNamed(AppRoutes.listCategoryScreen);
+  }
+
+  void onTapImg2() {
+    //TODO: Pass your request parameter here
+    PostProgramsReq postProgramsReq = PostProgramsReq();
+    dashboardController.callCreatePrograms(
+      postProgramsReq.toJson(),
+      successCall: _onCreateProgramsSuccess,
+      errCall: _onCreateProgramsError,
+    );
+  }
+
+  _onCreateProgramsSuccess() {
+    Get.offNamed(AppRoutes.searchResultScreen);
+  }
+
+  _onCreateProgramsError() {
+    Get.toNamed(AppRoutes.searchResult1Screen);
   }
 
   onTapRow() {
