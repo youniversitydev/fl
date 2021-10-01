@@ -1,7 +1,7 @@
 import '/core/app_export.dart';
 import 'package:get/get.dart';
 
-class SplashScreenController extends GetxController {
+class WelcomeController extends GetxController {
   @override
   void onReady() {
     super.onReady();

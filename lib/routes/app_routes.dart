@@ -1,4 +1,4 @@
-import 'package:iyouniweb1/presentation/splash_screen_screen/splash_screen_screen.dart';
+import 'package:iyouniweb1/presentation/welcome_screen/welcome_screen.dart';
 import 'package:iyouniweb1/presentation/login_screen/login_screen.dart';
 import 'package:iyouniweb1/presentation/register_form_screen/register_form_screen.dart';
 import 'package:iyouniweb1/presentation/dashboard_screen/dashboard_screen.dart';
@@ -39,7 +39,7 @@ import 'package:iyouniweb1/presentation/app_navigation_screen/app_navigation_scr
 import 'package:get/get.dart';
 
 class AppRoutes {
-  static String splashScreenScreen = '/splash_screen_screen';
+  static String welcomeScreen = '/welcome_screen';
 
   static String loginScreen = '/login_screen';
 
@@ -119,7 +119,7 @@ class AppRoutes {
   static String initialRoute = '/initialRoute';
 
   static List<GetPage> pages = [
-    GetPage(name: splashScreenScreen, page: () => SplashScreenScreen()),
+    GetPage(name: welcomeScreen, page: () => WelcomeScreen()),
     GetPage(name: loginScreen, page: () => LoginScreen()),
     GetPage(name: registerFormScreen, page: () => RegisterFormScreen()),
     GetPage(name: dashboardScreen, page: () => DashboardScreen()),
@@ -162,6 +162,6 @@ class AppRoutes {
         name: lailyfaFebrinaCardScreen, page: () => LailyfaFebrinaCardScreen()),
     GetPage(name: addressScreen, page: () => AddressScreen()),
     GetPage(name: appNavigationScreen, page: () => AppNavigationScreen()),
-    GetPage(name: initialRoute, page: () => SplashScreenScreen())
+    GetPage(name: initialRoute, page: () => WelcomeScreen())
   ];
 }

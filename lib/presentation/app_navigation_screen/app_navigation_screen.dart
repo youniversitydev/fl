@@ -76,8 +76,7 @@ class AppNavigationScreen extends StatelessWidget {
                                                           right: getSize(20),
                                                           bottom: getSize(10)),
                                                       child: Text(
-                                                          "lbl_splash_screen"
-                                                              .tr,
+                                                          "lbl_welcome".tr,
                                                           style: AppStyle
                                                               .textStyleregular20
                                                               .copyWith(
@@ -1554,7 +1553,7 @@ class AppNavigationScreen extends StatelessWidget {
   }
 
   onTapColumn() {
-    Get.toNamed(AppRoutes.splashScreenScreen);
+    Get.toNamed(AppRoutes.welcomeScreen);
   }
 
   onTapColumn1() {
