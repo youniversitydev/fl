@@ -22,15 +22,19 @@ class LoginScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                  Padding(
-                      padding: EdgeInsets.only(
-                          left: getSize(152),
-                          top: getSize(80),
-                          right: getSize(151)),
-                      child: Image.asset(ImageConstant.img_icon,
-                          height: getSize(72),
-                          width: getSize(72),
-                          fit: BoxFit.cover)),
+                  GestureDetector(
+                      onTap: () {
+                        onTapImg();
+                      },
+                      child: Padding(
+                          padding: EdgeInsets.only(
+                              left: getSize(152),
+                              top: getSize(80),
+                              right: getSize(151)),
+                          child: Image.asset(ImageConstant.img_icon,
+                              height: getSize(72),
+                              width: getSize(72),
+                              fit: BoxFit.cover))),
                   Padding(
                       padding: EdgeInsets.only(
                           left: getSize(105),
@@ -245,29 +249,25 @@ class LoginScreen extends StatelessWidget {
                               fontSize: getSize(12.0),
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.w700))),
-                  GestureDetector(
-                      onTap: () {
-                        onTapTxtDonTHaveAnA();
-                      },
-                      child: Padding(
-                          padding: EdgeInsets.only(
-                              left: getSize(81),
-                              top: getSize(8),
-                              right: getSize(82),
-                              bottom: getSize(113)),
-                          child: Text("msg_don_t_have_an_a".tr,
-                              style: AppStyle.textStylePoppinsbold12_1.copyWith(
-                                  fontSize: getSize(12.0),
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w700))))
+                  Padding(
+                      padding: EdgeInsets.only(
+                          left: getSize(81),
+                          top: getSize(8),
+                          right: getSize(82),
+                          bottom: getSize(113)),
+                      child: Text("msg_don_t_have_an_a".tr,
+                          style: AppStyle.textStylePoppinsbold12_1.copyWith(
+                              fontSize: getSize(12.0),
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w700)))
                 ]))));
+  }
+
+  onTapImg() {
+    Get.offNamed(AppRoutes.registerFormScreen);
   }
 
   onTapBtnSignIn() {
     Get.toNamed(AppRoutes.dashboardScreen);
-  }
-
-  onTapTxtDonTHaveAnA() {
-    Get.toNamed(AppRoutes.registerFormScreen);
   }
 }
