@@ -1,7 +1,9 @@
+import 'dart:convert';
+
 class PostProgramsReq {
   String? duration;
   int? cost;
-  List<Null>? providers;
+  List<String>? providers;
   List<Tags>? tags;
   bool? crawl;
 
@@ -12,15 +14,15 @@ class PostProgramsReq {
     duration = json['duration'];
     cost = json['cost'];
     if (json['providers'] != null) {
-      providers = <Null>[];
+      providers = <String>[];
       json['providers'].forEach((v) {
-        providers?.add(new Null.fromJson(v));
+        providers?.add(jsonDecode(v));
       });
     }
     if (json['tags'] != null) {
       tags = <Tags>[];
       json['tags'].forEach((v) {
-        tags?.add(new Tags.fromJson(v));
+        tags?.add(jsonDecode(v));
       });
     }
     crawl = json['crawl'];
@@ -31,10 +33,10 @@ class PostProgramsReq {
     data['duration'] = this.duration;
     data['cost'] = this.cost;
     if (this.providers != null) {
-      data['providers'] = this.providers?.map((v) => v?.toJson()).toList();
+      data['providers'] = this.providers?.map((v) => jsonEncode(v)).toList();
     }
     if (this.tags != null) {
-      data['tags'] = this.tags?.map((v) => v?.toJson()).toList();
+      data['tags'] = this.tags?.map((v) => jsonEncode(v)).toList();
     }
     data['crawl'] = this.crawl;
     return data;

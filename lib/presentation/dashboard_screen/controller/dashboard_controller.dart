@@ -21,6 +21,7 @@ class DashboardController extends GetxController {
           onCreateProgramsSuccess(resp);
           if (successCall != null) {
             successCall();
+            print(resp);
           }
         },
         onError: (err) {

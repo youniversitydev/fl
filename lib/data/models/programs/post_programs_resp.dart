@@ -1,9 +1,11 @@
+import 'dart:convert';
+
 class PostProgramsResp {
-  List<Null>? subject;
+  List<String>? subject;
   String? rating;
   String? description;
   String? effort;
-  List<Null>? owners;
+  List<String>? owners;
   String? title;
   double? duration;
   String? provider;
@@ -15,7 +17,7 @@ class PostProgramsResp {
   int? enrollmentCount;
   bool? hasCertificate;
   String? durationType;
-  List<Null>? spacyTags;
+  List<String>? spacyTags;
   String? ratingCount;
   int? docId;
   String? url;
@@ -54,18 +56,18 @@ class PostProgramsResp {
 
   PostProgramsResp.fromJson(Map<String, dynamic> json) {
     if (json['subject'] != null) {
-      subject = <Null>[];
+      subject = <String>[];
       json['subject'].forEach((v) {
-        subject?.add(new Null.fromJson(v));
+        subject?.add(jsonEncode(v));
       });
     }
     rating = json['rating'];
     description = json['description'];
     effort = json['effort'];
     if (json['owners'] != null) {
-      owners = <Null>[];
+      owners = <String>[];
       json['owners'].forEach((v) {
-        owners?.add(new Null.fromJson(v));
+        owners?.add(jsonDecode(v));
       });
     }
     title = json['title'];
@@ -80,9 +82,9 @@ class PostProgramsResp {
     hasCertificate = json['has_certificate'];
     durationType = json['duration_type'];
     if (json['spacy_tags'] != null) {
-      spacyTags = <Null>[];
+      spacyTags = <String>[];
       json['spacy_tags'].forEach((v) {
-        spacyTags?.add(new Null.fromJson(v));
+        spacyTags?.add(jsonDecode(v));
       });
     }
     ratingCount = json['ratingCount'];
@@ -98,13 +100,13 @@ class PostProgramsResp {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.subject != null) {
-      data['subject'] = this.subject?.map((v) => v?.toJson()).toList();
+      data['subject'] = this.subject?.map((v) => jsonEncode(v)).toList();
     }
     data['rating'] = this.rating;
     data['description'] = this.description;
     data['effort'] = this.effort;
     if (this.owners != null) {
-      data['owners'] = this.owners?.map((v) => v?.toJson()).toList();
+      data['owners'] = this.owners?.map((v) => jsonEncode(v)).toList();
     }
     data['title'] = this.title;
     data['duration'] = this.duration;
@@ -118,7 +120,7 @@ class PostProgramsResp {
     data['has_certificate'] = this.hasCertificate;
     data['duration_type'] = this.durationType;
     if (this.spacyTags != null) {
-      data['spacy_tags'] = this.spacyTags?.map((v) => v?.toJson()).toList();
+      data['spacy_tags'] = this.spacyTags?.map((v) => jsonEncode(v)).toList();
     }
     data['ratingCount'] = this.ratingCount;
     data['doc_id'] = this.docId;
