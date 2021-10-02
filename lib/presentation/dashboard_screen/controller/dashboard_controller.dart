@@ -2,11 +2,19 @@ import '/core/app_export.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:iyouniweb1/data/apiClient/api_client.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class DashboardController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+//TODO: Pass your request parameter here
+    PostProgramsReq postProgramsReq = PostProgramsReq();
+    this.callCreatePrograms(
+      postProgramsReq.toJson(),
+      successCall: _onCreateProgramsSuccess,
+      errCall: _onCreateProgramsError,
+    );
   }
 
   @override
@@ -35,5 +43,18 @@ class DashboardController extends GetxController {
   void onCreateProgramsSuccess(var resp) {}
   void onCreateProgramsError(var err) {
     throw Exception(err);
+  }
+
+  _onCreateProgramsSuccess() {
+    Fluttertoast.showToast(
+      msg: "Received Courses",
+    );
+  }
+
+  _onCreateProgramsError() {
+    Get.defaultDialog(
+        onConfirm: () => Get.back(),
+        title: "Sysem is currently down",
+        middleText: "Please try back later.");
   }
 }

@@ -873,11 +873,17 @@ class DashboardScreen extends StatelessWidget {
   }
 
   _onCreateProgramsSuccess() {
-    Get.offNamed(AppRoutes.searchResultScreen);
+    Get.defaultDialog(
+        onConfirm: () => Get.back(),
+        title: "Completed",
+        middleText: "Programs fetched");
   }
 
   _onCreateProgramsError() {
-    Get.toNamed(AppRoutes.searchResult1Screen);
+    Get.defaultDialog(
+        onConfirm: () => Get.back(),
+        title: "Error",
+        middleText: "We would fetch the best programs for you.");
   }
 
   onTapRow() {
