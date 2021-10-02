@@ -10,7 +10,7 @@ class ColorConstant {
 
   static Color light_blue_A200_3d = fromHex('#3d40bfff');
 
-  static Color blue_50 = fromHex('#ebf0ff');
+  static Color blue_50 = fromHex('#317bdb');
 
   static Color light_blue_A200_19 = fromHex('#1940bfff');
 

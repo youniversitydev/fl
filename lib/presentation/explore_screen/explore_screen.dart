@@ -43,7 +43,7 @@ class ExploreScreen extends StatelessWidget {
                                                     _searchProductController,
                                                 decoration: InputDecoration(
                                                     hintText:
-                                                        "lbl_search_product".tr,
+                                                        "lbl_search_program".tr,
                                                     hintStyle: AppStyle.textStylePoppinsregular12.copyWith(
                                                         fontSize: getSize(12.0),
                                                         fontFamily: 'Poppins',

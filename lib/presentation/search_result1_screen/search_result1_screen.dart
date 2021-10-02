@@ -44,7 +44,7 @@ class SearchResult1Screen extends StatelessWidget {
                         child: TextFormField(
                           controller: _searchProductController,
                           decoration: InputDecoration(
-                            hintText: "lbl_search_product".tr,
+                            hintText: "lbl_search_program".tr,
                             hintStyle:
                                 AppStyle.textStylePoppinsregular12.copyWith(
                               fontSize: getSize(

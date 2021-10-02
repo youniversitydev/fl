@@ -9,14 +9,14 @@ class AppDecoration {
           ),
         ),
         border: Border.all(
-          color: ColorConstant.blue_50,
+          color: ColorConstant.white_A700,
           width: getSize(
             1,
           ),
         ),
       );
   static get textStylePoppinsregular12_2 => BoxDecoration(
-        color: ColorConstant.white_A700,
+        color: ColorConstant.blue_50,
       );
   static get textStylePoppinsregular12_4 => BoxDecoration(
         color: ColorConstant.blue_50,

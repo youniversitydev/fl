@@ -31,7 +31,7 @@ class ImageConstant {
   static String img_system_icon_24px_search_2 =
       'assets/images/img_system_icon_24px_search_2.png';
 
-  static String img_icon_1 = 'assets/images/img_icon_1.png';
+  static String img_icon_1 = 'assets/images/YOU.png';
 
   static String img_system_icon_24px_user_1 =
       'assets/images/img_system_icon_24px_user_1.png';
@@ -239,7 +239,7 @@ class ImageConstant {
   static String img_system_icon_24px_left =
       'assets/images/img_system_icon_24px_left.png';
 
-  static String img_icon = 'assets/images/img_icon.png';
+  static String img_icon = 'assets/images/YOU.png';
 
   static String img_system_icon_24px_date =
       'assets/images/img_system_icon_24px_date.png';

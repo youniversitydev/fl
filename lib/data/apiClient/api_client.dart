@@ -33,27 +33,4 @@ class ApiClient extends GetConnect {
       onError!(error);
     }
   }
-
-  Future createPrograms({
-    Function(dynamic data)? onSuccess,
-    Function(dynamic error)? onError,
-    Map requestData = const {},
-  }) async {
-    ProgressDialogUtils.showProgressDialog(Get.context);
-    try {
-      Response response = await httpClient
-          .post('http://34.225.35.59:8080/v1.0/programs', body: requestData);
-      ProgressDialogUtils.hideProgressDialog(Get.context);
-      if (response.statusCode == 200) {
-        onSuccess!(response.body);
-      } else {
-        onError!(
-          response.hasError ? response.statusText : 'Something Went Wrong!',
-        );
-      }
-    } catch (error) {
-      ProgressDialogUtils.hideProgressDialog(Get.context);
-      onError!(error);
-    }
-  }
 }
