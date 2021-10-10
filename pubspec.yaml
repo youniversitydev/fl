@@ -1,27 +1,28 @@
 name: iyouniweb1
 description: A new Flutter project.
 version: 1.0.0+1
-environment: 
+environment:
   sdk: '>=2.12.0 <3.0.0'
-dependencies: 
-  flutter: 
+dependencies:
+  flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
   connectivity: ^3.0.6
   get: ^4.1.4
   flutter_rating_bar: ^4.0.0
   fluttertoast: ^8.0.8
-dev_dependencies: 
-  flutter_test: 
+dev_dependencies:
+  flutter_test:
     sdk: flutter
-flutter: 
+flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - assets/
     - assets/images/
-  fonts: 
+
+  fonts:
     - family: Poppins
-      fonts: 
+      fonts:
         - asset: assets/fonts/poppinsbold700.ttf
           weight: 700
         - asset: assets/fonts/poppinsregular400.ttf

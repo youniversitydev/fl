@@ -1,5 +1,17 @@
 import 'dart:convert';
 
+var req = {
+  "tags": [
+    {"name": "Machine Learning", "rating": 5}
+  ],
+  "providers": [],
+  "max_programs": 5,
+  "max_courses_per_program": 5,
+  "cost": 999,
+  "duration": 0,
+  "crawl": false
+};
+
 class PostProgramsReq {
   String? duration;
   int? cost;
@@ -40,6 +52,10 @@ class PostProgramsReq {
     }
     data['crawl'] = this.crawl;
     return data;
+  }
+
+  Map<String, dynamic> toSimJson() {
+    return req;
   }
 }
 

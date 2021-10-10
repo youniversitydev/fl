@@ -9,7 +9,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            backgroundColor: ColorConstant.light_blue_A200,
+            backgroundColor: ColorConstant.white_A700,
             resizeToAvoidBottomInset: true,
             body: SingleChildScrollView(
                 child: Container(

@@ -18,6 +18,7 @@ class ApiClient extends GetConnect {
   }) async {
     ProgressDialogUtils.showProgressDialog(Get.context);
     try {
+      print(requestData);
       Response response = await httpClient
           .post('http://34.225.35.59:8080/v1.0/programs', body: requestData);
       ProgressDialogUtils.hideProgressDialog(Get.context);

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:iyouniweb1/data/apiClient/api_client.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:iyouniweb1/data/models/programs/post_programs_req.dart';
+import 'package:iyouniweb1/data/models/programs/post_programs_req.dart';
 
 class DashboardController extends GetxController {
   @override
@@ -12,7 +13,7 @@ class DashboardController extends GetxController {
 //TODO: Pass your request parameter here
     PostProgramsReq postProgramsReq = PostProgramsReq();
     this.callCreatePrograms(
-      postProgramsReq.toJson(),
+      postProgramsReq.toSimJson(),
       successCall: _onCreateProgramsSuccess,
       errCall: _onCreateProgramsError,
     );
